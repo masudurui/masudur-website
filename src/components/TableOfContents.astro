@@ -1,0 +1,29 @@
+---
+interface TocItem {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  title?: string;
+  items: TocItem[];
+}
+
+const { title = "Contents", items } = Astro.props;
+---
+
+<nav class="pt-3 border-t border-ink-faint" aria-label="On this page">
+  <h2 class="text-sm font-medium text-ink-muted mb-2">{title}</h2>
+  <ul>
+    {items.map((item) => (
+      <li class="mt-1 first:mt-0">
+        <a
+          class="block text-sm leading-snug text-ink-muted no-underline hover:text-ink hover:opacity-100 transition-colors duration-150 ease-smooth"
+          href={`#${item.id}`}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

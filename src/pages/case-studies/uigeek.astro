@@ -1,0 +1,252 @@
+---
+import CaseStudyLayout from "@/layouts/CaseStudyLayout.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+import Figure from "@/components/Figure.astro";
+import CTA from "@/components/CTA.astro";
+import CodeBlock from "@/components/CodeBlock.astro";
+
+const tocItems = [
+  { id: "why-native-ios-feels-hard", label: "Why native iOS feels hard" },
+  { id: "text-and-content-refinement", label: "Text and content refinement" },
+  { id: "component-and-view-targeting", label: "Component and view targeting" },
+  { id: "multi-view-and-layout-selection", label: "Multi-view and layout selection" },
+  { id: "region-and-empty-space-feedback", label: "Region and empty-space feedback" },
+  { id: "animation-and-state-freeze", label: "Animation and state freeze" },
+  { id: "what-the-feedback-captures", label: "What the feedback captures" },
+  { id: "calibrating-the-detail", label: "Calibrating the detail" },
+  { id: "now-available", label: "Now available" },
+  { id: "acknowledgements", label: "Acknowledgements" },
+];
+
+const swiftCode = `// Example integration sketch
+import UIGeek
+
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .uiGeekEnvironment() // enables structured inspection & conventions in debug
+        }
+    }
+}`;
+---
+
+<CaseStudyLayout
+  title="UIGeek: A Structure for Native iOS App Development"
+  description="A structured approach and toolkit for building native iOS apps: conventions, reusable primitives, and a feedback loop that makes every refinement pass count."
+  date="2026-02-16"
+  dateFormatted="Feb 16, 2026"
+  tocItems={tocItems}
+>
+  <p>
+    I'm excited to introduce UIGeek, a structured approach and toolkit for building
+    native iOS apps. It started as the rough prototype I wrote about earlier, and it's
+    now a proper framework that anyone can use.
+  </p>
+
+  <p>
+    The best way to explain what it does is to show you. Every screen, transition, and
+    interaction in this case study was built with UIGeek. In fact, so was the entire
+    sample app and its supporting documentation, from the navigation architecture and
+    shared components to every polished demo. I'd describe what I wanted, watch what the
+    structure produced, identify the parts that still felt off, and feed the refinements
+    back in. UIGeek helped build UIGeek.
+  </p>
+
+  <Figure
+    src="/assets/images/Uigeek01.png"
+    alt="The UIGeek desktop app: a reasoning panel on the left reads the existing project files and plans the app's models and views, while an iPhone preview on the right shows the resulting habit tracker."
+    caption="A faux example of UIGeek in action: a clean native dashboard with proper safe-area handling, system fonts, and fluid navigation, generated and refined through the structure."
+    width={1280}
+    height={720}
+    loading="eager"
+  />
+
+  <Figure
+    src="/assets/images/Uigeek05.png"
+    alt="The UIGeek start screen: a green speech-bubble mark above the question 'What should we build today?'"
+    caption="The light-mode start state: one prompt field, nothing to configure first."
+    width={1280}
+    height={720}
+  />
+
+  <p>
+    What follows is a tour of UIGeek's core pieces. Every demo was made with the feature
+    it's showing. Yes, it's very meta.
+  </p>
+
+  <SectionHeading id="why-native-ios-feels-hard" title="Why native iOS feels hard" />
+
+  <p>
+    Building a native iOS app is so hard. You juggle UIKit or SwiftUI, Auto Layout or the
+    new layout system, state management, navigation stacks, accessibility, Dark Mode,
+    Dynamic Type, device-specific quirks, App Store requirements, and the constant feeling
+    that something is one constraint away from breaking. That's why we built the UIGeek
+    app development structure: a deliberate set of conventions, reusable primitives, and
+    feedback loops that remove the friction without sacrificing the polish of true native
+    code.
+  </p>
+
+  <p>
+    The loop looked like this: the structure generates a solid starting screen or flow. I
+    run it on device or simulator, interact with it a few times. Something feels
+    off. Maybe the spacing doesn't match Human Interface Guidelines, a transition is too
+    abrupt, or a list doesn't respect safe areas properly. I note the issue against the
+    exact component or layout rule, feed it back, and the structure adjusts. I check
+    again. Still not quite right. Another pass.
+  </p>
+
+  <p>
+    This went on for hours. Dozens of iterations per screen. Hundreds across the entire
+    sample app and docs.
+  </p>
+
+  <Figure
+    src="/assets/images/Uigeek06.png"
+    alt="A dark UIGeek window asking 'What app do you want to build?' above a row of four platform targets: phone, desktop display, laptop and watch."
+    caption="Pick the target first (phone, desktop, laptop or watch) before a single line of layout is written."
+    width={1280}
+    height={720}
+  />
+
+  <SectionHeading id="text-and-content-refinement" title="Text and content refinement" />
+
+  <p>
+    The simplest case is copy and labels. You see a string that's too long for the button,
+    or a title that doesn't match the system style. You select it, note the fix, and the
+    structure updates the localized string and styling in one go. I cleaned up dozens of
+    copy and Dynamic Type issues this way.
+  </p>
+
+  <p>Select text or labels to annotate content, localization, or typography problems.</p>
+
+  <Figure
+    src="/assets/images/Uigeek02.png"
+    alt="The composer holding a typed instruction above four attached reference thumbnails."
+    caption="The composer takes a written instruction alongside reference images, so content and its source material arrive together."
+    width={1280}
+    height={720}
+  />
+
+  <SectionHeading id="component-and-view-targeting" title="Component and view targeting" />
+
+  <p>
+    For everything else, you point at the view. UIGeek captures enough context (view
+    hierarchy, modifiers, constraints or layout priorities, trait collections) for the next
+    iteration to land precisely. Most of the screens you're imagining were refined this
+    way: identify, note, iterate.
+  </p>
+
+  <p>Tap any view or control to add structured feedback.</p>
+
+  <Figure
+    src="/assets/images/Uigeek04.png"
+    alt="Typing an @ symbol in the composer opens a capability menu."
+    caption="Typing @ scopes the request: Documents, Presentations, Computer, or Build iOS Apps for SwiftUI and App Intents work."
+    width={1280}
+    height={720}
+  />
+
+  <SectionHeading id="multi-view-and-layout-selection" title="Multi-view and layout selection" />
+
+  <p>
+    Sometimes you need to adjust several related elements at once. I used this constantly
+    when aligning navigation items, list cells, or toolbar buttons that all needed the
+    same treatment.
+  </p>
+
+  <p>Select multiple views to apply consistent spacing, styling, or behavior changes.</p>
+
+  <SectionHeading id="region-and-empty-space-feedback" title="Region and empty-space feedback" />
+
+  <p>
+    You can also target empty regions. I used this for layout feedback, pointing at gaps
+    that felt too tight, or areas where a secondary action should appear without breaking
+    the visual hierarchy.
+  </p>
+
+  <p>Drag to select any region, including empty space, for layout notes.</p>
+
+  <SectionHeading id="animation-and-state-freeze" title="Animation and state freeze" />
+
+  <p>
+    SwiftUI and UIKit animations are the trickiest. The exact intermediate state you want
+    to improve might only exist for a fraction of a second. The structure's inspection
+    tools let you pause or scrub so you can note the precise timing, spring parameters, or
+    matchedGeometry effect that needs work.
+  </p>
+
+  <p>Freeze or scrub animations to annotate specific frames and transitions.</p>
+
+  <SectionHeading id="what-the-feedback-captures" title="What the feedback captures" />
+
+  <p>
+    When you target a view, the output includes its identity (type, accessibility
+    identifier, or key path), position in the hierarchy, frame, and relevant traits. When
+    you select text, you get the exact string. Views are identified by the most useful
+    signal: label text, accessibility label, or structural role. "Make the avatar
+    smaller" is ambiguous. Image with a specific accessibility identifier or the
+    exact modifier chain is not. This precision is why the feedback loop stayed tight even
+    after hundreds of iterations.
+  </p>
+
+  <SectionHeading id="calibrating-the-detail" title="Calibrating the detail" />
+
+  <p>
+    How much context you need depends on the problem. Fixing a label? The structure just
+    needs the string and its location. Debugging why a sheet transition feels wrong? That
+    may need the full presentation style, detents, animation curve, and surrounding
+    environment values.
+  </p>
+
+  <p>
+    So there are graduated levels of output: Compact (identity + note), Standard (adds
+    frame and key modifiers), Detailed (hierarchy and nearby context), and Forensic
+    (computed traits, environment, and layout priorities). Most of the time Standard was
+    enough. When the settings panel animation still felt off, switching to Forensic showed
+    exactly which values were being applied. The next pass fixed it cleanly.
+  </p>
+
+  <SectionHeading id="now-available" title="Now available" />
+
+  <p>
+    UIGeek is a structured set of conventions, starter templates, and inspection helpers
+    for native iOS. Add the core modules to your project, follow the layout and component
+    patterns, and the refinement loop becomes straightforward. It works with pure SwiftUI,
+    UIKit, or mixed codebases.
+  </p>
+
+  <CodeBlock lang="Swift" code={swiftCode} label="Swift integration example" />
+
+  <Figure
+    src="/assets/images/Uigeek03.png"
+    alt="An 'Upgrade to plus' dialog comparing two plans."
+    caption="Plans and credits: a free tier for building, testing and exporting, and a Plus tier adding rollover credits, priority support, and TestFlight and App Store distribution."
+    width={1280}
+    height={720}
+  />
+
+  <p>
+    People talk about one-shotting: getting a perfect native screen on the first try.
+    UIGeek is less about that and more about giving yourself (and any AI or teammate
+    helping you) what is needed to make each pass count. Sometimes that's one pass.
+    Usually it's a few. The point is every pass moves the app meaningfully closer to
+    feeling native and finished. This is still a v1. But even in its current form, it has
+    already changed how I approach native iOS work. Hopefully it does the same for you. To
+    learn more, check out the full UIGeek documentation and sample project.
+  </p>
+
+  <CTA links={[
+    { label: "Documentation", pending: true },
+    { label: "Sample project", pending: true },
+  ]} />
+
+  <SectionHeading id="acknowledgements" title="Acknowledgements" />
+
+  <p>
+    Special thanks to the collaborators who helped shape the early patterns and feedback
+    tools. This case study was designed and iterated with the help of… you guessed
+    it, the same structure.
+  </p>
+</CaseStudyLayout>

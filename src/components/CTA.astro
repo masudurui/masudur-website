@@ -1,0 +1,43 @@
+---
+interface CTALink {
+  label: string;
+  href?: string;
+  pending?: boolean;
+  note?: boolean;
+}
+
+interface Props {
+  links: CTALink[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="flex flex-wrap items-center gap-2 my-8">
+  {links.map((link) => {
+    if (link.note) {
+      return (
+        <span class="inline-flex items-center px-3.5 py-[0.4375rem] text-sm leading-snug text-ink-muted border border-dashed border-ink-faint rounded-full cursor-default select-none">
+          {link.label}
+        </span>
+      );
+    }
+    if (link.pending) {
+      return (
+        <span class="inline-flex items-center px-3.5 py-[0.4375rem] text-sm font-medium leading-snug text-ink-muted bg-ink-faint/50 rounded-full cursor-default">
+          {link.label}
+        </span>
+      );
+    }
+    return (
+      <a
+        class="inline-flex items-center px-3.5 py-[0.4375rem] text-sm font-medium leading-snug text-surface bg-ink rounded-full no-underline transition-opacity duration-150 ease-smooth hover:opacity-80"
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {link.label}
+      </a>
+    );
+  })}
+</div>

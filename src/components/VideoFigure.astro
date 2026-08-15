@@ -1,0 +1,32 @@
+---
+interface Props {
+  src: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+}
+
+const { src, caption, width = 1920, height = 1080 } = Astro.props;
+---
+
+<figure class="my-8">
+  <video
+    class="w-full h-auto border border-ink-faint rounded-[10px]"
+    width={width}
+    height={height}
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="metadata"
+  >
+    <source src={src} type="video/quicktime" />
+    <source src={src} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  {caption && (
+    <figcaption class="mt-2 text-sm leading-snug text-ink-muted text-center">
+      {caption}
+    </figcaption>
+  )}
+</figure>

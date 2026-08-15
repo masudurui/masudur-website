@@ -1,0 +1,227 @@
+---
+import CaseStudyLayout from "@/layouts/CaseStudyLayout.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+import VideoFigure from "@/components/VideoFigure.astro";
+
+const tocItems = [
+  { id: "the-before-and-after", label: "The before and after" },
+  { id: "the-design-loop", label: "The design loop" },
+  { id: "key-decisions", label: "Key decisions that made it work" },
+  { id: "what-changed", label: "What changed" },
+  { id: "reflection", label: "Reflection" },
+];
+---
+
+<CaseStudyLayout
+  title="Bizwise: The Backbone for Small Service Businesses"
+  description="A product design case study: turning static, scattered contact lists into a living customer relationship workspace for small and medium-sized service businesses."
+  date="2021-05-23"
+  dateFormatted="May 23, 2021"
+  tocItems={tocItems}
+>
+  <p>
+    I'm excited to share the story of Bizwise. Between May and August 2021, I led the
+    design of a customer list management system that turned static, scattered contact
+    lists into a living workspace.
+  </p>
+
+  <p>
+    What started as a response to the everyday chaos of small and medium-sized service
+    businesses became something more fundamental: the quiet system of record that kept
+    their customer relationships intact.
+  </p>
+
+  <p>
+    <strong>Role:</strong> Lead Product Designer (end-to-end: research, systems
+    thinking, UX/UI, usability testing, and iterative refinement with real users).
+  </p>
+
+  <p><strong>Timeline:</strong> May to August 2021.</p>
+
+  <SectionHeading id="the-before-and-after" title="The before and after" />
+
+  <p>
+    The best way to explain it is to show the before-and-after. Most SMBs I talked to
+    were running their entire customer world across spreadsheets, email contacts, paper
+    lists, and lightweight tools that never quite talked to each other. Data lived in
+    fragments. Follow-ups got missed. Activity history disappeared. Employees sometimes
+    walked out with the client list.
+  </p>
+
+  <p>
+    Existing payment or scheduling platforms solved pieces of the workflow, but none of
+    them gave non-technical owners a reliable place to remember and nurture relationships.
+    Bizwise closed that gap.
+  </p>
+
+  <p>
+    Research came from forum analysis, interviews, and competitor teardowns. The numbers
+    were stark: fewer than 5% of these businesses used a full CRM. Almost everyone lived
+    in spreadsheets or inboxes. What they actually wanted was simple and powerful at the
+    same time:
+  </p>
+
+  <ul>
+    <li>Automatic customer creation from real interactions (forms, emails, calls)</li>
+    <li>A clear activity timeline</li>
+    <li>Easy grouping, tagging, notes, and file attachments</li>
+    <li>Reminders for birthdays, anniversaries, and next steps</li>
+    <li>Controlled employee access so client data couldn't walk out the door</li>
+  </ul>
+
+  <p>
+    Those insights shaped every decision. We weren't building another sales CRM. We were
+    building a relationship memory system for people who just wanted to run their
+    business.
+  </p>
+
+  <VideoFigure
+    src="/assets/images/Bizwise01.webm"
+    caption="The new customer creation flow, turning a blank entry into a living profile in seconds."
+  />
+
+  <SectionHeading id="the-design-loop" title="The design loop" />
+
+  <p>
+    I approached it the same way I approach most product work: systems thinking first,
+    then relentless iteration with real users. I mapped the core flows (customer creation
+    and editing, activity tracking, grouping and tagging, contact import, and duplicate
+    merging) then moved into low-fidelity prototypes.
+  </p>
+
+  <p>
+    Two rounds of usability testing with actual small business owners refined the
+    navigation, the grouping logic, and the discoverability of key actions.
+  </p>
+
+  <p>
+    The biggest learning came early: importing from a spreadsheet had to feel almost
+    effortless. Users expected it to be dead simple, so the final design centered on a
+    guided import process that removed friction at the exact moment it mattered most.
+  </p>
+
+  <VideoFigure
+    src="/assets/images/Bizwise02.webm"
+    caption="The guided import process: spreadsheet uploads that feel effortless, not technical."
+  />
+
+  <SectionHeading id="key-decisions" title="Key decisions that made it work" />
+
+  <h3>Automatic customer creation</h3>
+  <p>
+    Inbound interactions like website forms, emails, and calendar events could spin up a
+    customer profile without manual data entry. Profiles appeared ready to use, already
+    linked to the source activity.
+  </p>
+
+  <VideoFigure
+    src="/assets/images/Bizwise03.webm"
+    caption="Automatic profile creation: a new customer appears ready to use, linked to the interaction that created it."
+  />
+
+  <h3>Activity timeline</h3>
+  <p>
+    Every email, appointment, note, and file lived in one chronological view. Owners could
+    finally see the relationship at a glance instead of hunting across tools.
+  </p>
+
+  <VideoFigure
+    src="/assets/images/Bizwise04.webm"
+    caption="The customer profile: every email, appointment, note, and file in one chronological view."
+  />
+
+  <h3>Smart grouping and tagging</h3>
+  <p>
+    Targeted outreach became practical. Tags and groups let businesses segment without
+    complexity.
+  </p>
+
+  <VideoFigure
+    src="/assets/images/Bizwise05.webm"
+    caption="Grouping and merging: segment customers without complexity, merge duplicates cleanly."
+  />
+
+  <h3>File attachments and reminders</h3>
+  <p>
+    Invoices, appraisals, contracts, and personal details (birthdays, anniversaries) sat
+    right on the profile. Relationship tracking stopped being an afterthought.
+  </p>
+
+  <h3>Access controls</h3>
+  <p>
+    Limited employee permissions addressed the real fear of customer poaching while still
+    letting the team do its job.
+  </p>
+
+  <p>
+    These pieces connected customer data to website forms, emails, calendars, and invoices.
+    The architecture treated the customer list as the hub rather than another isolated
+    spreadsheet.
+  </p>
+
+  <VideoFigure
+    src="/assets/images/Bizwise06.webm"
+    caption="The full customer creation experience: from empty state to a connected, living profile."
+  />
+
+  <SectionHeading id="what-changed" title="What changed" />
+
+  <p>The metrics told the story clearly:</p>
+
+  <ul>
+    <li><strong>38%</strong> faster customer onboarding</li>
+    <li><strong>41%</strong> reduction in manual data entry</li>
+    <li><strong>26%</strong> increase in repeat customer engagement</li>
+    <li><strong>2.7×</strong> faster profile creation</li>
+  </ul>
+
+  <p>
+    Behind the numbers was a quieter shift: small service businesses finally had a single,
+    trustworthy place where customer relationships lived and grew.
+  </p>
+
+  <SectionHeading id="reflection" title="Reflection" />
+
+  <p>
+    This project reinforced something I keep coming back to: simplicity is often more
+    valuable than feature depth. Traditional CRMs optimize for sales teams and pipeline
+    velocity. Small businesses primarily need tools that help them remember people and
+    nurture relationships without friction. Designing strictly around that insight produced
+    a more focused product.
+  </p>
+
+  <p>
+    The work also sharpened my skills in iterative, user-centered design and highlighted
+    how critical seamless integrations and restrained feature sets are for non-technical
+    owners. Feature overload is always a temptation in complex ecosystems; resisting it was
+    one of the harder and more important parts of the process.
+  </p>
+
+  <p>
+    Looking at it now, in an AI-driven landscape, the natural next layer would be
+    auto-tagging and predictive relationship insights. But the foundation remains the same:
+    give small businesses a reliable backbone for the relationships that keep them alive.
+  </p>
+
+  <blockquote>
+    <p>
+      Bizwise didn't try to be everything. It tried to be the dependable center of the
+      customer relationship for the people who needed it most. That turned out to be
+      enough.
+    </p>
+    <cite>Masudur Rahman</cite>
+  </blockquote>
+
+  <Fragment slot="footer">
+    <h3 class="text-base font-semibold mt-0 mb-2">Key outcomes</h3>
+    <ul class="mb-5">
+      <li>Unified fragmented sources (spreadsheets, emails, paper) into one accessible system</li>
+      <li>Automated profile creation and activity tracking that cut manual work</li>
+      <li>Grouping, reminders, and controlled exports that supported better outreach and lower churn</li>
+    </ul>
+    <p class="mb-5">
+      If you're working on tools for small businesses, or thinking about relationship-first
+      product design, I'd love to hear from you.
+    </p>
+  </Fragment>
+</CaseStudyLayout>

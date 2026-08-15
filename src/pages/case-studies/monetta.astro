@@ -1,0 +1,268 @@
+---
+import CaseStudyLayout from "@/layouts/CaseStudyLayout.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+import Figure from "@/components/Figure.astro";
+import CTA from "@/components/CTA.astro";
+
+const tocItems = [
+  { id: "the-challenge", label: "The real challenge was trust" },
+  { id: "guiding-principles", label: "Guiding principles" },
+  { id: "onboarding", label: "Onboarding that builds confidence" },
+  { id: "shopping", label: "Shopping across borders" },
+  { id: "wallet", label: "The multi-currency wallet" },
+  { id: "card", label: "The card experience" },
+  { id: "crypto", label: "Crypto integration" },
+  { id: "design-system", label: "The design system" },
+  { id: "impact", label: "What the work demonstrated" },
+];
+---
+
+<CaseStudyLayout
+  title="Monetta: Building a Borderless Financial SuperApp"
+  description="A product design case study: shaping the MVP of a borderless financial SuperApp, from token-based payments and multi-currency wallets to cross-border shopping and crypto."
+  date="2020-07-08"
+  dateFormatted="July 8, 2020"
+  tocItems={tocItems}
+>
+  <p>
+    Monetta is a borderless financial SuperApp I helped shape as the first product designer,
+    working directly with the CEO. Access to global commerce and financial tools is still
+    deeply unequal. Large parts of the world cannot reliably use international cards, pay or
+    shop across borders, or reach global brands and modern financial products.
+  </p>
+
+  <p>
+    Most existing solutions address only one narrow slice of the problem (a wallet here,
+    remittances there, a prepaid card somewhere else) and break the moment someone tries to
+    actually live with their money globally. Monetta's ambition was never to become another
+    wallet. It was to become a financial ecosystem that lets people earn, store, spend, and
+    move money freely across borders.
+  </p>
+
+  <p>
+    <strong>Role:</strong> First Product Designer (end-to-end product design, MVP
+    strategy, information architecture, design systems, and close collaboration with the CEO
+    on product direction).
+  </p>
+
+  <p>
+    The question that guided everything was simple and unforgiving: "What is the smallest
+    product that proves people will trust us with their money, and actually use it?"
+  </p>
+
+  <CTA links={[
+    { label: "View live product", href: "https://www.monetta.es/" },
+  ]} />
+
+  <Figure
+    src="/assets/images/Monetta01.png"
+    alt="Monetta onboarding flow: splash screen with branding, phone number entry, and verification code input"
+    caption="The onboarding flow: from splash screen to verification, designed to feel familiar and trustworthy."
+    width={3528}
+    height={1982}
+    loading="eager"
+  />
+
+  <SectionHeading id="the-challenge" title="The real challenge was trust, not features" />
+
+  <p>
+    Monetta could have launched with a long list of capabilities: multi-currency wallet,
+    token-based payments, global eCommerce access, digital service top-ups, debit cards,
+    cross-border transfers. Each one was legitimate. Building all of them at once would have
+    created a product that felt impressive in a pitch deck and fragile in people's hands.
+  </p>
+
+  <p>
+    Financial products live or die on trust. People do not experiment casually with money
+    the way they experiment with social apps. Every unclear label, every unexpected
+    conversion, every moment of uncertainty compounds into hesitation. The work was less
+    about adding surface area and more about reducing the distance between "this looks
+    interesting" and "I am willing to put real value here."
+  </p>
+
+  <p>We treated the MVP as a proof of reliability rather than a showcase of technology.</p>
+
+  <Figure
+    src="/assets/images/Monetta06.png"
+    alt="Monetta information architecture: a detailed flowchart mapping all flows"
+    caption="The information architecture: mapping every flow across the SuperApp to keep complexity manageable."
+    width={10584}
+    height={5946}
+  />
+
+  <SectionHeading id="guiding-principles" title="Guiding principles that emerged" />
+
+  <p>
+    Three principles took shape through the early decisions and shaped every major product
+    choice that followed.
+  </p>
+
+  <p>
+    <strong>Show value, not technology.</strong> Users should experience money that behaves
+    predictably. The underlying mechanisms could be sophisticated; the interface had to feel
+    ordinary and reliable.
+  </p>
+
+  <p>
+    <strong>Build confidence before ambition.</strong> Onboarding and early moments had to
+    explain why Monetta exists, deliver tangible value quickly, and lower the emotional cost
+    of trying something new with money.
+  </p>
+
+  <p>
+    <strong>Design a SuperApp that stays simple.</strong> The product needed a clear primary
+    spine of actions, progressive disclosure of power, and structural patterns that could
+    expand later without forcing users to relearn the product.
+  </p>
+
+  <SectionHeading id="onboarding" title="Onboarding that builds confidence, not hype" />
+
+  <p>
+    Traditional financial onboarding often oscillates between aggressive marketing language
+    and dense compliance screens. We took a different route. Onboarding was treated as the
+    first proof of the product's character. It explained why Monetta exists, showed concrete
+    value early, and deliberately reduced fear around new financial systems.
+  </p>
+
+  <p>
+    The goal was not excitement for its own sake. The goal was quiet confidence. This focus
+    on early value and trust produced a measurable outcome: a <strong>25% increase in user
+    retention</strong> through personalised product discovery. People stayed because the
+    product demonstrated usefulness before it asked for deeper commitment.
+  </p>
+
+  <Figure
+    src="/assets/images/Monetta09.png"
+    alt="Monetta design system: primary and secondary color palettes, typography scale, icon set, UI elements"
+    caption="The design system: colors, typography, icons, and component states that kept the product consistent as it grew."
+    width={3528}
+    height={1982}
+  />
+
+  <SectionHeading id="shopping" title="Shopping across borders" />
+
+  <p>
+    One of the earliest and most important choices was how to handle value itself.
+    Token-based systems can easily become abstract and intimidating. We rejected that path.
+    Tokens in Monetta were designed to behave like currency. Conversion was clear and
+    reversible, and users saw value in terms they already understood rather than being asked
+    to adopt a new mental model.
+  </p>
+
+  <p>
+    No belief in the underlying technology was required, only reliability. This decision
+    reduced cognitive load at the exact moment it mattered most: when someone first moved
+    real money into the system. By making the representation of value feel familiar, we made
+    the leap of trust smaller.
+  </p>
+
+  <Figure src="/assets/images/Monetta03.png" alt="Monetta store experience" caption="The store experience: browsing, searching, and discovering products with token-based pricing that feels like currency." width={3528} height={1982} />
+  <Figure src="/assets/images/Monetta04.png" alt="Monetta product filters" caption="Product filtering: gender, price range, and category filters designed for clarity and speed." width={3528} height={1982} />
+  <Figure src="/assets/images/Monetta05.png" alt="Monetta shopping flow" caption="From product detail to checkout: cart, order summary, and wishlist with consistent token-based pricing." width={3528} height={1982} />
+
+  <SectionHeading id="wallet" title="The multi-currency wallet" />
+
+  <p>
+    At the center of the ecosystem sat the multi-currency wallet. Its job was not merely to
+    hold balances. It was to help users preserve value. We designed and evolved the wallet
+    experience so that people could keep value in USD and other stable references when local
+    conditions made that desirable.
+  </p>
+
+  <p>
+    The result was a <strong>40% increase in average wallet balances</strong>. People were
+    not just transacting; they were trusting the product with meaningful amounts over time.
+    That shift, from occasional use to storing value, is one of the strongest signals a
+    financial product can receive.
+  </p>
+
+  <Figure src="/assets/images/Monetta07.png" alt="Monetta payment options" caption="Payment options: multiple local and international methods for adding funds, designed for the Latin American market." width={3528} height={1982} />
+  <Figure src="/assets/images/Monetta08.png" alt="Monetta fiat wallet" caption="The fiat wallet: card balance, ATM withdrawals, and token-based value transfers in one clear flow." width={3528} height={1982} />
+
+  <SectionHeading id="card" title="The card experience" />
+
+  <p>
+    A physical and virtual card brought Monetta into the real world. Users could select card
+    designs, choose delivery methods, track shipment progress, and manage security controls,
+    all within the same coherent experience. The card became the tangible proof that Monetta
+    was real, not just another app promising future capability.
+  </p>
+
+  <Figure src="/assets/images/Monetta10.png" alt="Monetta card request flow" caption="Requesting a card: choose a design, pick a delivery method, and receive confirmation in three clear steps." width={3528} height={1982} />
+  <Figure src="/assets/images/Monetta12.png" alt="Monetta card tracking" caption="Card tracking: clear delivery progress from order to doorstep." width={3528} height={1982} />
+  <Figure src="/assets/images/Monetta11.png" alt="Monetta card management" caption="Card management: settings, profile, and security controls that put users in full control." width={3528} height={1982} />
+
+  <SectionHeading id="crypto" title="Crypto integration" />
+
+  <p>
+    Leading end-to-end design across Wallet, Shopping, and Crypto integrations created
+    consistent patterns that increased transaction frequency by <strong>30%</strong>. The
+    crypto experience followed the same principle as everything else: show value in terms
+    people understand, keep the interface predictable, and never force users to become
+    experts before they can act.
+  </p>
+
+  <Figure src="/assets/images/Monetta13.png" alt="Monetta crypto portfolio" caption="Crypto portfolio: wallet integrations, live balances, and exchange in one unified experience." width={3528} height={1982} />
+  <Figure src="/assets/images/Monetta14.png" alt="Monetta crypto trading" caption="Crypto trading: Bitcoin charts, token swaps, and USDT tracking with familiar financial patterns." width={3528} height={1982} />
+  <Figure src="/assets/images/Monetta15.png" alt="Monetta crypto operations" caption="Crypto operations: QR scanning, point wallet overview, and request flows for receiving assets." width={3528} height={1982} />
+
+  <SectionHeading id="design-system" title="A SuperApp without the weight of complexity" />
+
+  <p>
+    A SuperApp can easily become a dense collection of features competing for attention. We
+    refused that outcome. The experience was organised around clear primary actions. Secondary
+    capabilities appeared only when they became relevant. Progressive disclosure protected
+    newcomers while still leaving room for power users.
+  </p>
+
+  <p>
+    Structural patterns were established early so that future expansion (shopping, additional
+    services, deeper integrations) would feel like natural extensions rather than bolted-on
+    modules. This systems-level approach paid off. The product felt coherent even as its
+    surface area grew.
+  </p>
+
+  <SectionHeading id="impact" title="What the work ultimately demonstrated" />
+
+  <p>
+    Monetta proved that a borderless financial product does not need to overwhelm users with
+    every possible capability on day one. It needs to earn the right to expand by first
+    becoming reliable, understandable, and useful in a smaller form.
+  </p>
+
+  <ul>
+    <li><strong>25%</strong> higher retention from an onboarding strategy centred on early value and trust</li>
+    <li><strong>40%</strong> higher average wallet balances through a multi-currency experience focused on preserving value</li>
+    <li><strong>30%</strong> higher transaction frequency from coherent system-level patterns across Wallet, Shopping, and Crypto</li>
+    <li><strong>20%</strong> higher engagement from close partnership between design and leadership on product strategy</li>
+  </ul>
+
+  <p>
+    More important than the numbers was the qualitative shift. People began treating Monetta
+    as a place where money could live, not just pass through. By prioritising clarity over
+    spectacle, confidence over hype, and scalable simplicity over feature density, we created
+    a foundation that could grow into a genuine borderless financial ecosystem without
+    collapsing under its own complexity.
+  </p>
+
+  <blockquote>
+    <p>
+      In money products, trust is the real product. Everything else is infrastructure
+      for earning it.
+    </p>
+    <cite>Masudur Rahman</cite>
+  </blockquote>
+
+  <Fragment slot="footer">
+    <h3 class="text-base font-semibold mt-0 mb-2">Key outcomes</h3>
+    <ul class="mb-5">
+      <li>25% higher retention, 40% higher wallet balances, 30% more transactions, 20% higher engagement</li>
+      <li>End-to-end design across Wallet, Shopping, Crypto, and Card experiences as the first product designer</li>
+      <li>Scalable design system and information architecture for a SuperApp that stays simple</li>
+    </ul>
+    <p class="mb-5">
+      If you're working on financial products, borderless commerce, or trust-first
+      product design, I'd love to hear from you.
+    </p>
+  </Fragment>
+</CaseStudyLayout>

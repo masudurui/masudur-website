@@ -1,0 +1,274 @@
+---
+import CaseStudyLayout from "@/layouts/CaseStudyLayout.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+import Figure from "@/components/Figure.astro";
+import CTA from "@/components/CTA.astro";
+
+const tocItems = [
+  { id: "what-makes-family-family", label: "What makes Family, Family" },
+  { id: "simplicity-through-gradual-revelation", label: "Simplicity through gradual revelation" },
+  { id: "fluidity-through-seamless-transitions", label: "Fluidity through seamless transitions" },
+  { id: "delight-through-selective-emphasis", label: "Delight through selective emphasis" },
+  { id: "family-comes-first", label: "Family comes first" },
+  { id: "reflection", label: "Reflection" },
+];
+---
+
+<CaseStudyLayout
+  title="NeuroRoutine 0→1: Product Design & Founding"
+  description="A 0→1 product design case study: building a calm, private, local-first routine tool for families navigating autism and ADHD routines."
+  date="2026-08-10"
+  dateFormatted="Aug 10, 2026"
+  tocTitle="Family Values"
+  tocItems={tocItems}
+>
+  <p>
+    NeuroRoutine is a calm, private routine and wellbeing tool I built for my own
+    family. A child showing symptoms of ADHD and autism changed how we manage daily
+    life. It's local-first, fully offline, and now live in daily use by our family.
+  </p>
+
+  <p>
+    <strong>Role:</strong> Founder &amp; Product Designer (end-to-end: problem
+    discovery, product strategy, UX/UI, feature prioritization, and shipping). I built
+    the web app; native mobile (Expo / iOS + Android) is in progress so both parents
+    can use it.
+  </p>
+
+  <p>
+    <strong>Timeline:</strong> Personal project → live web app used daily by our
+    family.
+  </p>
+
+  <CTA links={[
+    { label: "View live web app", href: "https://www.glaze.app/app/neuroroutine-8aevDt" },
+    { label: "App Store, coming soon", note: true },
+  ]} />
+
+  <SectionHeading id="what-makes-family-family" title="What makes Family, Family" />
+
+  <p>
+    My child shows symptoms of ADHD and autism. Our occupational therapist regularly
+    gives guidance on daily habits, sensory needs, independence levels, and activities
+    that help or overwhelm. I was writing notes everywhere and still forgetting them.
+    My partner and I needed a shared, low-friction way to:
+  </p>
+
+  <ul>
+    <li>Capture and follow through on therapist recommendations</li>
+    <li>Build consistent, realistic daily and weekly routines without forcing what isn't ready</li>
+    <li>Track real progress (especially independence) so we could show the therapist what actually happens at home</li>
+    <li>Coordinate between two parents without constant verbal hand-offs or lost information</li>
+    <li>Keep everything private and local, with no cloud accounts and no data leaving our devices</li>
+  </ul>
+
+  <p>
+    Existing tools were either too clinical, too generic (habit trackers), too social,
+    or required accounts and internet. Nothing combined calm daily use for parents,
+    independence tracking, sensory logging, reward systems tuned for neurodivergent
+    kids, and easy therapist export while staying fully offline and private.
+  </p>
+
+  <p>I decided to build it.</p>
+
+  <Figure
+    src="/assets/images/NeuroScience01.png"
+    alt="NeuroRoutine's Today screen: a star jar showing 2 of 10 stars earned toward a special treat, a co-parent sharing card, and a morning sensory routine of eight steps such as outside walk, gym ball jumping and hand massage, each with a duration."
+    caption="The Today view, routines, rewards and co-parent sharing in one calm screen."
+    width={1134}
+    height={1117}
+    loading="eager"
+  />
+
+  <SectionHeading id="simplicity-through-gradual-revelation" title="Simplicity through gradual revelation" />
+
+  <ul>
+    <li>Make daily routines feel supportive rather than overwhelming.</li>
+    <li>Help both parents stay aligned with minimal friction.</li>
+    <li>Turn therapist advice into visible, trackable progress at home.</li>
+    <li>Protect privacy completely (local-first, optional file sharing only).</li>
+    <li>Design something calm enough that tired parents would actually open it every day.</li>
+  </ul>
+
+  <SectionHeading id="fluidity-through-seamless-transitions" title="Fluidity through seamless transitions" />
+
+  <p>
+    I started from our actual pain points and the therapist's language rather than
+    from feature checklists. Core product principles I set early:
+  </p>
+
+  <ul>
+    <li>Local &amp; private by default. No accounts, no internet required.</li>
+    <li>Calm visual language and low cognitive load (soft shadows, restrained color, clear hierarchy).</li>
+    <li>Independence over compliance. Track "how much help was needed" so we can fade prompts over time.</li>
+    <li>Co-parent collaboration without complexity. File-based sharing that non-technical parents can use via AirDrop / Messages / USB.</li>
+    <li>Age- and need-aware templates so we weren't starting from a blank page every time.</li>
+  </ul>
+
+  <p>
+    I used AI tools (Grok, ChatGPT) and no-code where they accelerated execution, but
+    owned the problem framing, prioritization, information architecture, interaction
+    design, and final experience.
+  </p>
+
+  <blockquote>
+    <p>The goal was speed to a usable family product, not engineering purity.</p>
+    <cite>Masudur Rahman</cite>
+  </blockquote>
+
+  <SectionHeading id="delight-through-selective-emphasis" title="Delight through selective emphasis" />
+
+  <h3>Independence tracking &amp; prompt fading</h3>
+  <p>
+    Every completed step asks "how much help?" (full / some / independent). Progress
+    views show trends and distribution. When a step is independent several times in a
+    row, a gentle suggestion appears to start fading prompts. This directly mirrors
+    how our OT talks about building skills.
+  </p>
+  <Figure
+    src="/assets/images/NeuroScience03.png"
+    alt="The Progress screen showing independence over the last 30 days at 100 percent independent, with a legend breaking results into full help, some help, and did it themselves, alongside panels for steps completed, sensory triggers and goals."
+    caption="Independence is tracked as a trend, not a pass or fail. The same language our OT uses."
+    width={1069}
+    height={1079}
+  />
+
+  <h3>Star reward jar</h3>
+  <p>
+    A simple, visual per-child jar that fills as routines and steps are completed,
+    plus a bonus-star option. Parents set the target and what the stars are working
+    toward. Celebration on redeem. Designed to feel encouraging rather than gamified
+    pressure.
+  </p>
+
+  <h3>Age-based templates</h3>
+  <p>
+    Ready-made routines filtered by age bands (3 to 5, 6 to 8, 9 to 10) and focus (autism /
+    ADHD). These became the fastest way for us to start and later customize.
+  </p>
+  <Figure
+    src="/assets/images/NeuroScience05.png"
+    alt="The routine Library filtered by age band and focus, showing ready-made template cards including Morning Sensory Routine, Bedtime Wind-Down, After-School Reset and Calm-Down Break, each listing its step count."
+    caption="Age- and focus-filtered templates, so we never started from a blank page."
+    width={1069}
+    height={1087}
+  />
+
+  <h3>Journal: sensory/trigger logger + weekly reflection</h3>
+  <p>
+    Two-tap logging (intensity + tags + note) with a calm daily timeline. Weekly
+    parent reflection with three gentle prompts and optional local voice notes (stored
+    only on device, never uploaded). Microphone permission is requested only when
+    first used.
+  </p>
+  <Figure
+    src="/assets/images/NeuroScience04.png"
+    alt="The Journal's weekly reflection with three prompts: wins this week, what was hard, and focus for next week, plus an optional voice note button labelled as recorded and kept privately on this device, never uploaded."
+    caption="Three gentle prompts a week. Voice notes never leave the device."
+    width={1071}
+    height={1093}
+  />
+
+  <h3>Therapist-ready PDF export</h3>
+  <p>
+    One-click export that now includes independence trends, level breakdown,
+    skill-stage summary, reward summary, top sensory triggers, sessions, and goals,
+    so the therapist sees the real home picture.
+  </p>
+
+  <Figure
+    src="/assets/images/NeuroScience07.png"
+    alt="Log therapy session dialog on the Therapy Sessions tab. Date set to 14 Aug 2026 with Attended toggle on. Fields for therapist name, focus area tags (Motor, Speech, Sensory, Social, Behavior), skills and stages with an Add skill button, activities done, what the therapist said, and home activities to practice. Cancel and Log session buttons."
+    caption="Logging a therapy session. Date, focus areas, skills, what the therapist said, and home activities to practice."
+    width={1069}
+    height={1087}
+  />
+
+  <Figure
+    src="/assets/images/NeuroScience08.png"
+    alt="Add a goal dialog on the Progress Goals tab. Skill area dropdown set to Motor and a goal text field with placeholder text Drinks independently through a straw. Cancel and Add goal buttons."
+    caption="Adding a goal. Pick a skill area like Motor, type the goal, done."
+    width={1069}
+    height={1087}
+  />
+
+  <h3>Local co-parent sharing</h3>
+  <p>
+    A prominent "Share with Co-Parent" button lives on the dashboard and in Settings:
+  </p>
+  <ul>
+    <li>Exports everything meaningful as a single <em>.neuroroutine</em> file with plain-language instructions for AirDrop / Messages / USB.</li>
+    <li>Double-click opens the file directly into a review screen.</li>
+    <li>Smart merge: new items are combined automatically; only true conflicts (e.g. both parents edited the same recurring schedule) surface a simple "Keep mine / Use theirs" choice. Notes and comments from both parents are always preserved.</li>
+    <li>"Suggest a change" + comment threads on individual steps so one parent can propose and the other can approve, modify, or dismiss.</li>
+    <li>"Last synced / Imported from" timestamps and a simple name field so it's clear whose version is current.</li>
+    <li>Voice memos stay private on each device to keep the shared file small and practical.</li>
+  </ul>
+
+  <h3>UI system details that support daily use</h3>
+  <p>
+    Collapsible sidebar that shrinks to a clean icon-only rail (max ~48 to 72 px) with an
+    expand control. Selected states use soft white inner shadows and a light stroke so
+    the interface stays calm and readable in both full and compact modes. Consistent
+    treatment across buttons and small tabs. Everything remains fully offline and
+    local.
+  </p>
+
+  <SectionHeading id="family-comes-first" title="Family comes first" />
+
+  <p>The web app is live and in daily use by our family. We can now:</p>
+  <ul>
+    <li>Capture therapist guidance once and turn it into living routines</li>
+    <li>See independence trends instead of just "done / not done"</li>
+    <li>Share a complete picture with each other and with the OT without retyping or losing notes</li>
+    <li>Keep the emotional tone calm and non-judgmental</li>
+  </ul>
+
+  <p>
+    Mobile (Expo) is under active construction so both parents have native access
+    regardless of platform.
+  </p>
+
+  <p>
+    The biggest early win is reduced friction and fewer "I forgot what the therapist
+    said" moments. The product is still evolving with real family use.
+  </p>
+  <Figure
+    src="/assets/images/NeuroScience02.png"
+    alt="The Schedules screen listing routines grouped into Morning and Evening: Morning Sensory Routine with eight steps, a new routine, and Bedtime Wind-Down with six steps, each marked as repeating every day."
+    caption="Therapist guidance, turned into routines that repeat on their own."
+    width={1080}
+    height={1095}
+  />
+
+  <Figure
+    src="/assets/images/NeuroScience06.png"
+    alt="New routine editor with a name field, time of day set to Morning, eight color dot choices with orange selected, day-of-week toggles all selected showing Every day, and a Steps section with drag to reorder, No steps yet message, and an Add first step button."
+    caption="The routine editor. Name it, pick morning or evening, choose a colour, set which days, then add steps."
+    width={1069}
+    height={1087}
+  />
+
+  <SectionHeading id="reflection" title="Reflection" />
+
+  <p>
+    Building for my own family forced ruthless prioritization: every feature had to
+    earn its place in a tired parent's evening. Privacy and calm design were
+    non-negotiable; complexity was the enemy.
+  </p>
+
+  <p>
+    Working 0→1 as both founder and designer taught me to ship thin vertical slices
+    (independence tracking + rewards + sharing) rather than waiting for a perfect
+    system. The co-parent merge logic and suggestion threads were the hardest
+    interaction problems. Making collaboration feel safe and low-conflict mattered
+    more than clever technology.
+  </p>
+
+  <Fragment slot="footer">
+    <p class="mb-5">
+      If you're building for a family like ours, or thinking about local-first, calm
+      product design, I'd love to hear from you.
+    </p>
+  </Fragment>
+</CaseStudyLayout>

@@ -1,0 +1,231 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+interface CaseStudy {
+  title: string;
+  href: string;
+  date: string;
+  dateFormatted: string;
+  badge?: string;
+}
+
+interface YearGroup {
+  year: string;
+  items: CaseStudy[];
+}
+
+const caseStudies: YearGroup[] = [
+  {
+    year: "2026",
+    items: [
+      {
+        title: "NeuroRoutine",
+        href: "/case-studies/neuroroutine",
+        date: "2026-07-29",
+        dateFormatted: "29/07",
+        badge: "New",
+      },
+      {
+        title: "Uigeek App Development",
+        href: "/case-studies/uigeek",
+        date: "2026-02-16",
+        dateFormatted: "16/02",
+      },
+    ],
+  },
+  {
+    year: "2024",
+    items: [
+      {
+        title: "ShopHero",
+        href: "/case-studies/shophero",
+        date: "2024-01-13",
+        dateFormatted: "13/01",
+        badge: "NDA",
+      },
+    ],
+  },
+  {
+    year: "2021",
+    items: [
+      {
+        title: "Bizwise",
+        href: "/case-studies/bizwise",
+        date: "2021-05-23",
+        dateFormatted: "23/05",
+      },
+    ],
+  },
+  {
+    year: "2020",
+    items: [
+      {
+        title: "Monetta Values",
+        href: "/case-studies/monetta",
+        date: "2020-07-08",
+        dateFormatted: "08/07",
+      },
+    ],
+  },
+  {
+    year: "2019",
+    items: [
+      {
+        title: "Gotandem",
+        href: "/case-studies/gotandem",
+        date: "2019-01-21",
+        dateFormatted: "21/01",
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Md Masudur Rahman, Principal Product Designer"
+  description="Md Masudur Rahman is a Principal Product Designer and Founder at Uigeek Agency, based in Dhaka, Bangladesh."
+  canonicalUrl="https://masudurrahman.com/"
+>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="home-container max-w-content mx-auto px-6 pt-20 pb-18">
+    <main id="main">
+      <!-- Intro -->
+      <header>
+        <h1 class="text-xl font-semibold tracking-tight mb-1">
+          Md Masudur Rahman
+        </h1>
+        <p class="text-sm text-ink-muted tabular-nums mb-8">
+          Updated <time datetime="2026-08-10">Aug 10, 2026</time>
+        </p>
+      </header>
+
+      <!-- Bio -->
+      <section aria-label="About" class="space-y-5">
+        <p>
+          I was born and raised in Dhaka, Bangladesh, where I still live and work.
+        </p>
+
+        <p>
+          I'm a Principal Product Designer &amp; Founder at
+          <a href="https://www.uigeek.co/" target="_blank" rel="noopener noreferrer">Uigeek Agency</a>,
+          turning complex problems into seamless experiences. Previously, I was Senior Product Designer at
+          <a href="https://about.shophero.com/" target="_blank" rel="noopener noreferrer">ShopHero</a>,
+          designing SaaS tools for independent grocery stores.
+        </p>
+
+        <p>
+          Before that, I owned the end-to-end design of Wallet, Shopping, and Crypto experiences at
+          <a href="https://www.monetta.es/" target="_blank" rel="noopener noreferrer">Monetta</a>,
+          and optimized information architecture and content experiences for native English speakers at
+          <a href="https://www.bytedance.com/en/" target="_blank" rel="noopener noreferrer">ByteDance</a>.
+        </p>
+
+        <p>
+          I consider myself a product designer at heart and believe great design is about deeply
+          understanding users and crafting solutions that truly resonate.
+        </p>
+
+        <p>
+          You can find me on
+          <a href="https://www.linkedin.com/in/mdmasudur92/" target="_blank" rel="noopener noreferrer">LinkedIn</a>,
+          <a href="https://dribbble.com/Joy_7480" target="_blank" rel="noopener noreferrer">Dribbble</a>,
+          <a href="https://www.instagram.com/ui_ux_joy/" target="_blank" rel="noopener noreferrer">Instagram</a>,
+          or reach me via
+          <a href="#" data-copy-email="masudurui@gmail.com">email</a>.
+        </p>
+      </section>
+
+      <!-- Case Studies -->
+      <section class="case-studies mt-12" aria-labelledby="writing-title">
+        <h2 class="text-base font-semibold tracking-tight mb-5" id="writing-title">
+          Case Studies
+        </h2>
+
+        {caseStudies.map((group) => (
+          <div class="group-block">
+            <h3 class="text-sm font-medium text-ink-muted tabular-nums mb-1">
+              {group.year}
+            </h3>
+            <ul>
+              {group.items.map((item) => (
+                <li class="writing-item">
+                  <a
+                    class="writing-link"
+                    href={item.href}
+                  >
+                    <span class="writing-name">{item.title}</span>
+                  </a>
+                  {item.badge && <span class="badge">{item.badge}</span>}
+                  <span class="writing-rule" aria-hidden="true"></span>
+                  <span class="text-sm text-ink-muted whitespace-nowrap tabular-nums shrink-0">
+                    <time datetime={item.date}>{item.dateFormatted}</time>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 pt-5 border-t border-ink-faint text-sm text-ink-muted">
+      <p>Dhaka, Bangladesh <span class="tabular-nums">(GMT+6)</span></p>
+    </footer>
+  </div>
+</BaseLayout>
+
+<style>
+  .group-block + .group-block {
+    @apply mt-5;
+  }
+
+  .writing-item {
+    @apply flex items-baseline gap-2.5 py-1.5;
+  }
+
+  .writing-link {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .writing-name {
+    @apply min-w-0 overflow-hidden text-ellipsis whitespace-nowrap;
+  }
+
+  .writing-rule {
+    @apply flex-1 min-w-6 h-px bg-ink-faint -translate-y-[0.25em];
+  }
+
+  /* Mobile: stack items */
+  @media (max-width: 30em) {
+    .writing-item {
+      @apply flex-col items-start gap-px py-2;
+    }
+
+    .writing-name {
+      @apply overflow-visible whitespace-normal;
+    }
+
+    .writing-rule {
+      @apply hidden;
+    }
+  }
+
+  /* Responsive spacing — match case study pages */
+  @media (max-width: 40em) {
+    .home-container {
+      @apply pt-14 px-[1.375rem] pb-14;
+    }
+  }
+
+  @media (max-width: 30em) {
+    .home-container {
+      @apply pt-11 px-5;
+    }
+  }
+</style>

@@ -1,0 +1,196 @@
+---
+import CaseStudyLayout from "@/layouts/CaseStudyLayout.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+import Figure from "@/components/Figure.astro";
+
+const tocItems = [
+  { id: "what-makes-shophero-shophero", label: "What makes ShopHero, ShopHero" },
+  { id: "clarity", label: "Clarity through progressive disclosure" },
+  { id: "habit", label: "Habit through lists & reordering" },
+  { id: "scalability", label: "Scalability through a design system" },
+  { id: "impact", label: "Impact" },
+  { id: "learnings", label: "Learnings" },
+];
+---
+
+<CaseStudyLayout
+  title="ShopHero: Redesigning Grocery for 100+ Retailers"
+  description="A case study on redesigning ShopHero's white-label grocery platform (website and mobile app) to improve activation, conversion, and retention for independent retailers."
+  date="2024-01-13"
+  dateFormatted="Jan 13, 2024"
+  tocTitle="ShopHero Values"
+  tocItems={tocItems}
+  isPasswordProtected={true}
+  password="shophero2024"
+>
+  <p>
+    ShopHero is a white-label grocery platform powering the customer-facing websites and apps of 100+ retailers. For the past several years I led the end-to-end redesign of its core shopping experiences, first the website, then the mobile app, so that everyday shoppers could activate faster, convert more reliably, and return week after week.
+  </p>
+
+  <p>
+    The work has been praised for turning a fragmented, high-friction grocery flow into something that feels modern, habitual, and quietly powerful. Seeing retailers adopt it and watching first-order completion and repeat usage climb prompted me to write down the essence behind the redesign.
+  </p>
+
+  <p>
+    This is not a pixel-by-pixel tutorial. It is about how we made a complex multi-tenant grocery system feel welcoming, efficient, and scalable.
+  </p>
+
+  <p>
+    <strong>Role:</strong> Senior Product Designer (end-to-end: research, UX/UI, design system, usability testing, and handoff across website and mobile app).
+  </p>
+
+  <p>
+    <strong>Team:</strong> PM, designer, principal engineer, two front-end engineers.
+  </p>
+
+  <Figure
+    src="/assets/images/ShopHeroBefore.png"
+    alt="The legacy ShopHero website for Woodberry Food Market: a cluttered homepage with a large hero banner, a flat grid of category thumbnails, and a cartoon OMG mascot, labelled 'Before'."
+    caption="The legacy website: cluttered, over-categorised, and touch-unfriendly."
+    width={1456}
+    height={816}
+    loading="eager"
+  />
+
+  <SectionHeading id="what-makes-shophero-shophero" title="What makes ShopHero, ShopHero" />
+
+  <p>
+    The redesign naturally crystallized three guiding principles: <strong>clarity</strong>, <strong>habit</strong>, and <strong>scalability</strong>.
+  </p>
+
+  <p>
+    Clarity removes friction so shoppers can complete an order without second-guessing. Habit supports the weekly, repeat nature of grocery shopping so the platform becomes part of routine rather than a one-off chore. Scalability lets every retailer brand the experience as their own while sharing a single, maintainable codebase and design system.
+  </p>
+
+  <p>These principles respect the shopper's time, the retailer's brand, and ShopHero's ability to grow.</p>
+
+  <Figure
+    src="/assets/images/ShopHero V1.png"
+    alt="The redesigned ShopHero homepage for Apple Hill Market in a browser window."
+    caption="The redesigned homepage: oriented, clean, and category-first."
+    width={1456}
+    height={816}
+  />
+
+  <SectionHeading id="clarity" title="Clarity through progressive disclosure and transparency" />
+
+  <p>
+    Legacy flows presented every option, fee, and substitution rule at once. Cart abandonment sat at 42% on the website; mobile felt equally fragmented and touch-unfriendly. Over-categorisation, weak unit pricing, hidden fees, and complex delivery-slot selection were the main culprits.
+  </p>
+
+  <p>We rebuilt the hero journey (Homepage, Search/Category, Product Detail, Cart, Checkout) around progressive disclosure:</p>
+
+  <ul>
+    <li><strong>Homepage</strong> opens with a zip/store selector, personalized past orders, and aisle-style category tiles so shoppers enter the experience oriented.</li>
+    <li><strong>Category and search results</strong> surface faceted filters with live match counts, unit pricing, and dietary tags. Infinite scroll and clear applied-filter chips keep comparison effortless.</li>
+    <li><strong>Product pages</strong> lead with multiple images, nutritional facts, allergens, unit pricing, and contextual substitution suggestions plus "frequently bought with."</li>
+    <li><strong>Cart</strong> gathers substitutions at the cart level rather than forcing per-item decisions, shows fees early, and offers "Save for Later."</li>
+    <li><strong>Checkout</strong> collapses to three minimized steps: visual slot picker with transparent fees, order review with substitutions, and payment with collapsed coupon field and clear load indicators.</li>
+  </ul>
+
+  <p>
+    Every decision was grounded in Baymard research and validated with 5 to 8 usability sessions plus A/B tests. The result was a <strong>31% drop in checkout abandonment</strong> and a <strong>24% lift in overall conversion</strong> on the website; mobile cart abandonment fell 27%.
+  </p>
+
+  <Figure src="/assets/images/ShopHero02.png" alt="Side-by-side desktop and mobile views of the redesigned department browsing page." caption="Department browsing: desktop and mobile, photo-first category cards." width={1456} height={816} />
+  <Figure src="/assets/images/ShopHero06.png" alt="Product detail page for Chobani Greek Yogurt." caption="Product detail: images, unit pricing, allergens, and nutritional highlights." width={1456} height={816} />
+  <Figure src="/assets/images/ShopHero11.jpg" alt="Homepage search with live autocomplete." caption="Live search: product categories, results with pricing, and recipe suggestions." width={1456} height={816} />
+  <Figure src="/assets/images/ShopHero04.png" alt="Cart page on desktop and mobile." caption="Cart: early fee transparency, substitution handling, and out-of-stock notifications." width={1456} height={816} />
+  <Figure src="/assets/images/ShopHero08.png" alt="Checkout flow with a visual slot picker." caption="Checkout: visual date/time slot picker with transparent fees." width={1456} height={816} />
+  <Figure src="/assets/images/ShopHero09.png" alt="Payment step in checkout." caption="Payment: clear options, saved cards, and a collapsible coupon field." width={1456} height={816} />
+  <Figure src="/assets/images/ShopHero10.png" alt="Order review step." caption="Order review: three minimized steps, fee transparency, and a clear Place Order action." width={1456} height={816} />
+
+  <SectionHeading id="habit" title="Habit through lists, reordering, and persistent context" />
+
+  <p>
+    Grocery is not a discovery-driven category like fashion. It is high-frequency and list-driven. The old experience under-supported saved lists, past orders, and quick reordering.
+  </p>
+
+  <p>We elevated these surfaces:</p>
+
+  <ul>
+    <li>Persistent mini-cart and global substitution preferences travel with the shopper.</li>
+    <li>Homepage and mobile home feed surface personalized past orders and quick-list entry points.</li>
+    <li>Dedicated "My Lists &amp; Reorder" flows (especially strong on mobile with bottom-tab navigation) make weekly shopping a one- or two-tap action.</li>
+    <li>After order confirmation, reordering options are immediate.</li>
+  </ul>
+
+  <p>
+    Weekly reordering task success rose <strong>45%</strong> on the website; mobile repeat usage (weekly active shoppers) climbed <strong>41%</strong>. First-order completion moved from 41% to 57% on web (+38%) and +29% on first-session mobile orders.
+  </p>
+
+  <Figure src="/assets/images/ShopHero07.png" alt="Shopping list and reordering flows." caption="Lists and reordering: weekly shopping as a one-tap action." width={1456} height={816} />
+  <Figure src="/assets/images/ShopHero05.png" alt="Substitution suggestions in the cart." caption="Smart substitutions: contextual alternatives when items are unavailable." width={1456} height={816} />
+
+  <SectionHeading id="scalability" title="Scalability through a single design system" />
+
+  <p>
+    Supporting 100+ white-labeled stores previously meant fragmented codebases and inconsistent experiences. We built one responsive, desktop-first system with excellent mobile and tablet hand-off, fully themable for each retailer.
+  </p>
+
+  <p>
+    Trays, cards, filters, slot pickers, and substitution controls all live in a shared component library. Onboarding, store selector, loyalty integration, and branding tokens adapt per client without breaking the underlying patterns. The same system powers both the website (launched in six months) and the mobile app (1.5-year horizon), dramatically reducing overhead and accelerating retailer onboarding.
+  </p>
+
+  <Figure src="/assets/images/ShopHero12.png" alt="The ShopHero design system." caption="Design system: color tokens, gray scale, and type hierarchy." width={1456} height={816} />
+  <Figure src="/assets/images/Theme.png" alt="Multi-tenant theming across retailers." caption="One design system, 100+ retailer themes. Each store feels like its own." width={1456} height={816} />
+  <Figure src="/assets/images/Before.png" alt="Before and after comparison of the mobile app." caption="Mobile app before and after: from cluttered legacy to modern, habitual design." width={1456} height={816} />
+  <Figure src="/assets/images/Design System-1.png" alt="Mobile app design system in action." caption="Mobile design system: consistent patterns across browsing, search, product detail, and account flows." width={1456} height={816} />
+  <Figure src="/assets/images/Design System.png" alt="Mobile app checkout and onboarding screens." caption="Mobile checkout, onboarding, and cart: shared components across every flow." width={1456} height={816} />
+  <Figure src="/assets/images/Northstar contact points redesign.png" alt="Legacy mobile app screens." caption="Legacy mobile app: the starting point for the redesign." width={1456} height={816} />
+
+  <SectionHeading id="impact" title="Impact" />
+
+  <h3>Website</h3>
+  <ul>
+    <li>First-order completion <strong>+38%</strong></li>
+    <li>Checkout abandonment <strong>-31%</strong></li>
+    <li>Overall conversion <strong>+24%</strong></li>
+    <li>Weekly reordering success <strong>+45%</strong></li>
+  </ul>
+
+  <h3>Mobile</h3>
+  <ul>
+    <li>First-session order completion <strong>+29%</strong></li>
+    <li>Cart abandonment <strong>-27%</strong></li>
+    <li>Repeat usage <strong>+41%</strong></li>
+  </ul>
+
+  <h3>Business</h3>
+  <ul>
+    <li>27 new retailer clients in six months</li>
+    <li>Existing clients reported <strong>18% higher shopper retention</strong></li>
+    <li>Platform subscription revenue <strong>+~22% YoY</strong></li>
+    <li>Mobile-attributed revenue for clients rose <strong>35%</strong>; churn fell <strong>19%</strong></li>
+    <li>Larger enterprise deals became easier to close because the platform was now a demonstrably stronger sales tool</li>
+  </ul>
+
+  <Figure src="/assets/images/ShopHero03.png" alt="Recipe browsing and discovery." caption="Recipe discovery: content experiences that drive basket size." width={1456} height={816} />
+
+  <SectionHeading id="learnings" title="Learnings" />
+
+  <p>
+    Baymard's grocery and mobile research accelerated every major decision and gave the small team defensible rationale. Habitual, high-frequency shopping rewards investment in lists, reordering, and fee transparency far more than flashy one-off features.
+  </p>
+
+  <p>
+    Checkout remains the highest-leverage surface; simplicity and early transparency win. A flexible design system is not a nice-to-have. It is the mechanism that turns product design into recurring revenue and faster client activation.
+  </p>
+
+  <p>
+    Next, we want deeper longitudinal testing with real weekly shoppers and privacy-respecting personalization (smart lists, AI-assisted substitutions) layered on the same foundation.
+  </p>
+
+  <blockquote>
+    <p>
+      ShopHero is now the platform that lets independent and regional grocers compete with national players on experience while keeping their own brand front and center. That is the value we set out to create.
+    </p>
+    <cite>Masudur Rahman</cite>
+  </blockquote>
+
+  <Fragment slot="footer">
+    <p class="mb-5">
+      If you're working on grocery, marketplace, or white-label platform design, I'd love to hear from you.
+    </p>
+  </Fragment>
+</CaseStudyLayout>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  lang?: string;
+  code: string;
+  label?: string;
+}
+
+const { lang, code, label } = Astro.props;
+---
+
+<div class="my-8 bg-surface-subtle border border-ink-faint rounded-[10px] overflow-hidden">
+  {lang && (
+    <p class="mb-0 px-5 py-1 text-xs font-medium text-ink-muted border-b border-ink-faint">
+      {lang}
+    </p>
+  )}
+  <pre
+    class="px-5 py-5 overflow-x-auto"
+    tabindex="0"
+    role="region"
+    aria-label={label || `${lang} code example`}
+  ><code class="font-mono text-[0.8125rem] leading-relaxed whitespace-pre tracking-normal">{code}</code></pre>
+</div>

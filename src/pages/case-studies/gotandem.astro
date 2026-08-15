@@ -1,0 +1,207 @@
+---
+import CaseStudyLayout from "@/layouts/CaseStudyLayout.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+import Figure from "@/components/Figure.astro";
+
+const tocItems = [
+  { id: "the-problem", label: "The problem we walked into" },
+  { id: "research", label: "Research that shaped everything" },
+  { id: "designing", label: "Designing for clarity and speed" },
+  { id: "from-design-to-impact", label: "From design to impact" },
+  { id: "reflection", label: "What this work reinforced" },
+];
+---
+
+<CaseStudyLayout
+  title="Gotandem: Redesigning B2B Procurement for Maximum Impact"
+  description="A product design case study: redesigning a B2B procurement platform to boost purchase completion, cut approval times, and deliver measurable business impact."
+  date="2019-01-21"
+  dateFormatted="January 21, 2019"
+  tocItems={tocItems}
+>
+  <p>
+    I'm excited to share the work I did on Gotandem. Gotandem is a B2B procurement platform
+    that helps companies centralize purchasing and control spend. Teams across offices,
+    coworking spaces, and retail chains can source, approve, and track recurring
+    purchases, everything from office supplies to pantry goods, through a single system.
+  </p>
+
+  <p>
+    I led product design and go-to-market initiatives, focusing on conversion, operational
+    efficiency, and user satisfaction.
+  </p>
+
+  <p>
+    <strong>Role:</strong> Lead Product Designer (product design, go-to-market strategy,
+    conversion optimization, and cross-functional collaboration with product and engineering).
+  </p>
+
+  <p>The backend was already powerful. The product experience didn't match it yet.</p>
+
+  <Figure
+    src="/assets/images/Gotandem01.avif"
+    alt="Gotandem platform overview, the redesigned procurement dashboard"
+    caption="The redesigned Gotandem platform, centralizing procurement into one clear experience."
+    width={1920}
+    height={1080}
+    loading="eager"
+  />
+
+  <SectionHeading id="the-problem" title="The problem we walked into" />
+
+  <p>
+    The interface felt outdated, inconsistent, and cluttered. Core workflows like sourcing,
+    approvals, and recurring orders were full of friction. Navigation was unclear. UI patterns
+    weren't standardized. Users often felt overwhelmed rather than in control.
+  </p>
+
+  <p>
+    The real challenge was simplifying complexity: bringing consistency, clarity, and
+    confidence to a high-frequency B2B procurement workflow without stripping away the power
+    that made the platform valuable in the first place.
+  </p>
+
+  <p>
+    I partnered closely with product and engineering. We ran tight feedback loops, staying
+    aligned from early exploration through final handoff so that what we shipped was both
+    usable and strategically sound.
+  </p>
+
+  <Figure
+    src="/assets/images/Gotandem02.webp"
+    alt="Before and after comparison of the Gotandem interface"
+    caption="Bringing consistency and clarity to a cluttered procurement interface."
+    width={1920}
+    height={1080}
+  />
+
+  <SectionHeading id="research" title="Research that shaped everything" />
+
+  <p>
+    We talked to procurement managers, finance teams, and the people actually placing orders.
+    We mapped their current workflows and found the same friction points again and again:
+    long approval chains, confusing product catalogs, and almost no visibility into recurring
+    orders.
+  </p>
+
+  <p>
+    Quantitative data confirmed what the interviews suggested. Checkout and approval flows
+    had clear drop-off points. People were abandoning processes that should have felt routine.
+    Those insights became the foundation for the redesign.
+  </p>
+
+  <Figure
+    src="/assets/images/Gotandem03.avif"
+    alt="Research findings mapped to user workflow pain points"
+    caption="Mapping friction points across the procurement workflow, from checkout to approvals."
+    width={1920}
+    height={1080}
+  />
+
+  <SectionHeading id="designing" title="Designing for clarity and speed" />
+
+  <p>
+    We simplified the ordering flow into a single-screen multi-item checkout. Managers
+    received role-based dashboards that provided real-time visibility into team spend and
+    recurring orders. We introduced smart recommendations and recurring order templates to
+    cut decision fatigue and accelerate approvals.
+  </p>
+
+  <Figure
+    src="/assets/images/Gotandem04.avif"
+    alt="The simplified single-screen multi-item checkout flow"
+    caption="Single-screen multi-item checkout, reducing steps and decision fatigue."
+    width={1920}
+    height={1080}
+  />
+
+  <p>
+    Micro-interactions, notifications, and progress indicators were prototyped and tested
+    with engineering. Small signals of progress and clarity built trust in a process that
+    used to feel opaque.
+  </p>
+
+  <p>
+    The loop looked like this: map the pain, design the simplified flow, prototype the
+    critical moments, test with real users, measure the drop-off, refine, and ship. Then we
+    did it again.
+  </p>
+
+  <Figure
+    src="/assets/images/Gotandem05.avif"
+    alt="Role-based dashboard showing team spend and recurring orders"
+    caption="Role-based dashboards: real-time visibility into team spend and recurring orders."
+    width={1920}
+    height={1080}
+  />
+
+  <Figure
+    src="/assets/images/Gotandem06.webp"
+    alt="Smart recommendations and recurring order templates"
+    caption="Smart recommendations and recurring order templates that accelerate approvals."
+    width={1920}
+    height={1080}
+  />
+
+  <SectionHeading id="from-design-to-impact" title="From design to impact" />
+
+  <p>
+    We partnered with sales and customer success to put the new onboarding and approval
+    flows in front of pilot clients. Feedback and conversion analytics drove the next round
+    of refinements. Nothing stayed theoretical for long.
+  </p>
+
+  <p>The results were concrete:</p>
+
+  <ul>
+    <li><strong>+35%</strong> increase in purchase completion across multi-location accounts</li>
+    <li>Approval time cut by <strong>50%</strong>, freeing managers for higher-value work</li>
+    <li>NPS up <strong>22 points</strong>, driven by clearer dashboards and simpler workflows</li>
+    <li>Higher client retention and increased average order volume from streamlined recurring orders</li>
+  </ul>
+
+  <Figure
+    src="/assets/images/Gotandem07.webp"
+    alt="Gotandem's redesigned approval and onboarding flow"
+    caption="The redesigned approval flow: faster decisions, clearer status, happier teams."
+    width={1920}
+    height={1080}
+  />
+
+  <SectionHeading id="reflection" title="What this work reinforced" />
+
+  <p>
+    In B2B product design, understanding both user needs and business goals is
+    non-negotiable. Small workflow improvements and clear visibility can move conversion and
+    operational efficiency more than big feature launches. And close collaboration across
+    design, engineering, and go-to-market teams is what turns good ideas into solutions that
+    are actually actionable, scalable, and impactful.
+  </p>
+
+  <p>
+    Gotandem already had the engine. We redesigned the experience so that engine could finally
+    deliver the control and confidence its users needed. The numbers showed it worked. More
+    importantly, the people using it every day felt the difference.
+  </p>
+
+  <blockquote>
+    <p>
+      Gotandem already had the engine. We redesigned the experience so that engine could
+      finally deliver the control and confidence its users needed.
+    </p>
+    <cite>Masudur Rahman</cite>
+  </blockquote>
+
+  <Fragment slot="footer">
+    <h3 class="text-base font-semibold mt-0 mb-2">Key outcomes</h3>
+    <ul class="mb-5">
+      <li>+35% purchase completion, 50% faster approvals, NPS up 22 points</li>
+      <li>Simplified multi-item checkout and role-based dashboards for real-time spend visibility</li>
+      <li>Smart recommendations and recurring order templates that cut decision fatigue</li>
+    </ul>
+    <p class="mb-5">
+      If you're working on B2B procurement tools, or thinking about conversion-first
+      product design, I'd love to hear from you.
+    </p>
+  </Fragment>
+</CaseStudyLayout>
